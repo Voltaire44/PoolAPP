@@ -1,0 +1,212 @@
+/* Général */
+body {
+    font-family: 'Roboto', sans-serif; /* Typographie moderne */
+    background: #1e1e1e; /* Fond sombre pour un look futuriste */
+    color: #e0e0e0; /* Texte en couleur claire pour contraste */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* En-tête */
+header {
+    background: linear-gradient(135deg, #007bff, #00d2ff); /* Dégradé de bleu pour un effet futuriste */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid #00d2ff; /* Bordure lumineuse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombre pour un effet de profondeur */
+}
+
+header h1 {
+    font-size: 2em; /* Agrandir le titre */
+    margin: 0;
+}
+
+/* Contenu principal */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centrage du contenu */
+}
+
+/* Sections */
+section {
+    background: #2c2c2c; /* Fond plus clair pour les sections */
+    border-radius: 12px; /* Coins arrondis pour un look moderne */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Ombre pour un effet de profondeur */
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+/* Formulaire */
+#add-pool {
+    background: #333; /* Fond de section plus sombre */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px; /* Limiter la largeur du formulaire */
+    margin: 0 auto; /* Centrer le formulaire */
+}
+
+form label {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #cfcfcf; /* Couleur des labels */
+}
+
+form input[type="text"],
+form input[type="url"],
+form select {
+    padding: 12px;
+    margin-top: 5px;
+    border: 2px solid #007bff; /* Bordure bleue pour les champs de formulaire */
+    border-radius: 6px; /* Coins arrondis pour les champs */
+    background: #1e1e1e; /* Fond sombre pour les champs */
+    color: #e0e0e0; /* Texte clair dans les champs */
+    max-width: 100%; /* Assurer que les champs ne dépassent pas du conteneur */
+}
+
+form input[type="text"],
+form input[type="url"] {
+    width: 80%; /* Réduire la largeur des champs de texte */
+}
+
+form select {
+    width: 40%; /* Réduire la largeur du sélecteur */
+}
+
+form button {
+    padding: 12px;
+    margin-top: 15px;
+    background: linear-gradient(135deg, #007bff, #00d2ff); /* Dégradé pour le bouton */
+    color: #fff;
+    border: none;
+    border-radius: 6px; /* Coins arrondis pour le bouton */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s, transform 0.3s; /* Transition douce pour les effets */
+    max-width: 100%; /* Assurer que le bouton ne dépasse pas du conteneur */
+}
+
+form button:hover {
+    background: linear-gradient(135deg, #00d2ff, #007bff); /* Changement de dégradé au survol */
+    transform: scale(1.05); /* Effet de zoom au survol */
+}
+
+/* Liste des pools */
+#pool-list {
+    list-style: none;
+    padding: 0;
+}
+
+#pool-list li {
+    border-bottom: 1px solid #444; /* Bordure subtile entre les éléments */
+    padding: 15px 0;
+}
+
+#pool-list li:last-child {
+    border-bottom: none;
+}
+
+#pool-list a {
+    color: #00d2ff; /* Couleur vive pour les liens */
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s, text-shadow 0.3s; /* Transition douce pour les effets */
+}
+
+#pool-list a:hover {
+    color: #007bff; /* Couleur de survol des liens */
+    text-shadow: 0 0 8px rgba(0, 210, 255, 0.5); /* Effet lumineux au survol */
+}
+
+/* Nombre de Pools */
+#pool-count {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Pied de page */
+footer {
+    background: linear-gradient(135deg, #007bff, #00d2ff); /* Dégradé de couleur pour le pied de page */
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    border-top: 3px solid #00d2ff;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    main {
+        padding: 15px;
+    }
+
+    form button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 992px) {
+    header, footer {
+        padding: 15px;
+    }
+
+    form {
+        flex-direction: column;
+    }
+
+    form input[type="text"],
+    form input[type="url"],
+    form select,
+    form button {
+        width: 93%;
+    }
+
+    form label {
+        margin: 10px 0 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        font-size: 18px;
+        padding: 15px 10px;
+    }
+
+    form {
+        margin: 0;
+    }
+
+    #pool-list {
+        font-size: 14px;
+    }
+
+    footer {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    header h1 {
+        font-size: 2.5em; /* Ajustement de la taille du titre pour les petits écrans */
+    }
+
+    form button {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    #pool-list a {
+        font-size: 18px;
+    }
+
+    footer {
+        padding: 8px;
+        font-size: 12px;
+    }
+}

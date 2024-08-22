@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Application web pour le suivi des pools de minage. Gérez vos liens de pools de minage et suivez vos performances facilement.">
+    <meta name="theme-color" content="#007bff"> <!-- Couleur de thème pour la barre d'adresse -->
+    <meta name="mobile-web-app-capable" content="yes"> <!-- Indique que le site est une Web App sur mobile -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Suivi de Minage">
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png"> <!-- Icône pour l'écran d'accueil sur iOS -->
+    <link rel="manifest" href="manifest.json"> <!-- Lien vers le fichier manifeste pour PWA -->
+    <title>Suivi de Minage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Suivi de Minage</h1>
+    </header>
+
+    <main>
+        <section id="add-pool">
+            <h2>Ajouter un Pool de Minage</h2>
+            <form id="pool-form">
+                <label for="pool-name">Nom du Pool:</label>
+                <input type="text" id="pool-name" placeholder="Exemple: NiceHash" required>
+                <label for="pool-url">URL du Pool:</label>
+                <input type="url" id="pool-url" placeholder="Exemple: https://example.com" required>
+                <label for="pool-type">Type de Machine:</label>
+                <select id="pool-type" required>
+                    <option value="ASIC">ASIC</option>
+                    <option value="GPU">GPU</option>
+                </select>
+                <button type="submit">Ajouter</button>
+            </form>
+        </section>
+
+        <section id="pools">
+            <h2>Liste des Pools de Minage</h2>
+            <p id="pool-count">Nombre de Pools: 0</p>
+            <ul id="pool-list">
+                <!-- Les liens seront ajoutés ici dynamiquement -->
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Si vous avez des questions, n'hésitez pas à nous contacter.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Suivi de Minage</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('Service Worker enregistré avec succès:', registration);
+                    })
+                    .catch(error => {
+                        console.log('Erreur lors de l\'enregistrement du Service Worker:', error);
+                    });
+            });
+        }
+    </script>
+</body>
+
+</html>
